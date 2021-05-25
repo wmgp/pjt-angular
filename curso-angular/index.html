@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR" ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
+        integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script src="/node_modules/angular/angular.min.js"></script>
+
+    <script src="/node_modules/angular-route/angular-route.min.js"></script>
+
+
+    <script src="/app.js"></script>
+    <script src="/rotas.js"></script>
+    
+    <script src="/service.js"></script>
+    <script src="/cadastro/cadastro.controller.js"></script>
+    <script src="/home/home.controller.js"></script>
+    <script src="menuBar/navTab.js"></script>
+
+   
+
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+
+</head>
+
+<body>
+    <div ng-controller='menuController as vm'>
+        <ul class="nav nav-tabs">
+
+            <!--************For do array itensMenu do arquivo "navTabs.js"*******************************-->
+            <li class="nav-item" ng-repeat="item in vm.itensMenu">
+                <!--**************item.class e item.titulo são atributos do objeto criado no arquivp "navTabs" *****************-->
+                <a ng-class="item.class" ng-click="vm.navegar(item.titulo,   vm.itensMenu)">{{item.titulo}}</a>
+            </li>
+            
+        </ul>
+        
+    </div>
+<div ng-view></div>
+</body>
+
+</html>

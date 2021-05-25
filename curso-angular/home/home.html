@@ -1,0 +1,21 @@
+<div class="container" ng-init="vm.init()"> 
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Matricula</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Idade</th>
+                <th scope="col">Série</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="aluno in vm.alunos">
+                <th scope="row">{{aluno.matricula}}</th>
+                <td>{{aluno.nome}}</td>
+                <td>{{aluno.idade}}</td>
+                <td>{{aluno.serie}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
